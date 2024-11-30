@@ -60,8 +60,6 @@ public class PlayerMovement : MonoBehaviour
         {
             wallJumpCoolDown += Time.deltaTime;
         }
-
-        print(onWall());
     }
 
     private void Jump()
