@@ -1,4 +1,0 @@
-repository "Joe The Delivery Guy@18968012804839@cloud"
-  path "/"
-    br "/main"
-    co "/main"
