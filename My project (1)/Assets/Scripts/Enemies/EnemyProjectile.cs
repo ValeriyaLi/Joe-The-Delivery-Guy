@@ -5,9 +5,11 @@ public class EnemyProjectile : EnemyDamage
     [SerializeField] private float speed;
     [SerializeField] private float resetTime;
     private float lifetime;
+    [SerializeField]private AudioClip arrow;
 
     public void ActivateProjectile()
     {
+        SoundManager.instance.PlaySound(arrow);
         lifetime = 0;
         gameObject.SetActive(true);
     }

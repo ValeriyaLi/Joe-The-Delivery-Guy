@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
     public float currentHealth { get; private set; }
     private Animator anim;
     private bool dead;
+    [SerializeField]private AudioClip deathSound;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class Health : MonoBehaviour
         }
         else
         {
+            SoundManager.instance.PlaySound(deathSound);
             if (!dead)
             {
                 anim.SetTrigger("die");
