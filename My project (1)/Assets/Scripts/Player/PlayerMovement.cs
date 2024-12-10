@@ -101,4 +101,23 @@ public class PlayerMovement : MonoBehaviour
     {
         return horizontalInput == 0 &&  isOnGround() && !onWall();
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("npc"))
+        {
+                Debug.Log("Player pressed E near NPC.");
+                npcController npc = collision.GetComponent<npcController>();
+                if (npc != null && npc.dialogHolder != null)
+                {
+                    npc.ActivateDialog();
+                }
+                else
+                {
+                    Debug.LogError("DialogHolder is missing or NPC reference is invalid!");
+                }
+        }
+    }
+
+
 }
