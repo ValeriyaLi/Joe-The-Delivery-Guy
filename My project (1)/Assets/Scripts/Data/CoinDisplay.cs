@@ -9,7 +9,7 @@ public class CoinDisplay : MonoBehaviour
     private void Update()
     {
         
-        coinText.text = "Coins: " + coinData.CoinCount;
+        coinText.text = " " + coinData.CoinCount;
 
        
         coinText.ForceMeshUpdate();
