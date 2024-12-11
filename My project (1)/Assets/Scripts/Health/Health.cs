@@ -7,11 +7,14 @@ public class Health : MonoBehaviour
     private Animator anim;
     private bool dead;
     [SerializeField]private AudioClip deathSound;
+	private UIManager uiManager;
 
     private void Awake()
     {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
+        uiManager = FindObjectOfType<UIManager>();
+
     }
     public void TakeDamage(float _damage)
     {
@@ -43,6 +46,8 @@ public class Health : MonoBehaviour
                 }
                 
                 dead = true;
+				uiManager.GameOver();
+            	return;
             }
             else 
                 Debug.Log("Player DEAD!");

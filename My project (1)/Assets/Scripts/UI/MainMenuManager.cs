@@ -7,7 +7,7 @@ public class MainMenuManager : MonoBehaviour
 	[SerializeField] private GameObject mainMenuScreen;
     private void Awake()
     {
-		mainMenuScreen.SetActive(false);
+		mainMenuScreen.SetActive(true);
     }
     private void Update()
     {
