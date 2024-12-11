@@ -14,6 +14,9 @@ public class PlayerAttack : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
+		
+
+		CreatePersistentFireballPool();
     }
 
     private void Update()
@@ -40,5 +43,16 @@ public class PlayerAttack : MonoBehaviour
                 return i;
         }
         return 0;
+    }
+    private void CreatePersistentFireballPool()
+    {
+        GameObject fireballParent = new GameObject("FireballPool");
+        DontDestroyOnLoad(fireballParent);
+
+        for (int i = 0; i < fireballs.Length; i++)
+        {
+            fireballs[i] = Instantiate(fireballs[i], fireballParent.transform);
+            fireballs[i].SetActive(false); // Ensure they are inactive initially
+        }
     }
 }
