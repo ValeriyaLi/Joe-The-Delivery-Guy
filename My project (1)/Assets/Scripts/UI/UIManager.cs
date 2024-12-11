@@ -37,6 +37,8 @@ public class UIManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		gameOverScreen.SetActive(false);
+
     }
 
     //Main Menu
@@ -44,7 +46,7 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         pauseScreen.SetActive(false);
-
+		gameOverScreen.SetActive(false);
     }
 	public void StartGame()
     {
@@ -74,6 +76,7 @@ public class UIManager : MonoBehaviour
         else
             Time.timeScale = 1;
     }
+
     public void SoundVolume()
     {
         SoundManager.instance.ChangeSoundVolume(0.2f);
@@ -82,5 +85,7 @@ public class UIManager : MonoBehaviour
     {
         SoundManager.instance.ChangeMusicVolume(0.2f);
     }
+
+
     #endregion
 }
